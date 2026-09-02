@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios — SM Soluciones Contables</title>
+<meta name="description" content="Dictámenes IMSS/INFONAVIT, cumplimiento ISN, REPSE, nómina, contabilidad y planeación fiscal para empresas en México.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#111111;
+  --ink-secondary:#444444;
+  --ink-tertiary:#888888;
+  --navy:#0B1F3A;
+  --navy-mid:#14305A;
+  --gold:#9A6E20;
+  --gold-light:#C49535;
+  --bg:#FFFFFF;
+  --bg-off:#F2F0EC;
+  --bg-dark:#E8E5DF;
+  --border:#C8C4BC;
+  --border-strong:#A8A39A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border)}
+.logo-mark{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;letter-spacing:0.04em;color:var(--navy);text-decoration:none}
+.logo-mark strong{font-weight:600}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--ink-secondary);text-decoration:none;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a.active{color:var(--navy);font-weight:600}
+.nav-cta{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:var(--navy);padding:9px 22px;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--navy-mid)}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:38px;height:38px}
+.nav-toggle span{display:block;width:100%;height:2px;background:var(--navy)}
+.nav-links li{position:relative}
+.dropdown{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);box-shadow:0 16px 40px rgba(11,31,58,0.14);padding:28px;gap:36px;min-width:520px;z-index:200}
+.nav-links li.has-dropdown:hover .dropdown,
+.nav-links li.has-dropdown:focus-within .dropdown{display:flex}
+.dropdown-col{display:flex;flex-direction:column;gap:11px;min-width:220px}
+.dropdown-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:2px}
+.dropdown-col a{font-size:13px;color:var(--ink-secondary);text-decoration:none;text-transform:none;letter-spacing:0;font-weight:400}
+.dropdown-col a:hover{color:var(--navy)}
+
+.hero-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:40px;font-weight:500}
+.hero-rule{width:48px;height:2px;background:var(--gold);margin:44px 0}
+
+.page-header{padding:200px 60px 80px;background:var(--bg)}
+.page-header .hero-eyebrow{margin-bottom:32px}
+.page-header h1{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:400;color:var(--navy);line-height:1.15;max-width:22ch}
+.page-header .hero-rule{margin:36px 0}
+.page-header p.sub{font-size:15px;font-weight:400;line-height:1.8;color:var(--ink-secondary);max-width:60ch}
+
+.sec-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-tertiary);margin-bottom:16px}
+.sec-h2{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--navy);line-height:1.2}
+
+.servicios-group{padding:40px 60px 40px}
+.group-intro{font-size:14px;line-height:1.8;color:var(--ink-secondary);max-width:60ch;margin-bottom:8px}
+.servicio-row{display:grid;grid-template-columns:60px 1fr 170px;align-items:start;padding:32px 0;border-top:1px solid var(--border-strong);gap:32px;transition:background 0.15s;scroll-margin-top:100px}
+.servicios-group:last-of-type .servicio-row:last-child{border-bottom:1px solid var(--border-strong)}
+.servicio-row:hover{background:var(--bg-off);padding-left:12px;padding-right:12px;margin-left:-12px;margin-right:-12px}
+.s-num{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;color:var(--border-strong);padding-top:5px}
+.s-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--navy);margin-bottom:10px}
+.s-desc{font-size:13px;font-weight:400;line-height:1.8;color:var(--ink-secondary);max-width:540px}
+.s-tag{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);padding-top:8px;text-align:right}
+
+.closing{padding:40px 60px 120px}
+.closing-box{background:var(--bg-off);border:1px solid var(--border);padding:48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.closing-box p{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);max-width:36ch;font-weight:400}
+.btn-main{display:inline-block;background:var(--navy);color:#fff;padding:15px 36px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:background 0.2s}
+.btn-main:hover{background:var(--navy-mid)}
+
+footer{background:#060E1A;padding:40px 60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.08)}
+.foot-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:rgba(255,255,255,0.55);letter-spacing:0.04em}
+.foot-links{display:flex;gap:28px}
+.foot-links a{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;font-weight:500}
+.foot-links a:hover{color:rgba(255,255,255,0.75)}
+.foot-copy{font-size:11px;color:rgba(255,255,255,0.25);font-weight:400}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+
+@media(max-width:768px){
+  nav{padding:0 24px}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;padding:12px 24px;gap:0;overflow-y:auto;z-index:150}
+  .nav-links.open{display:flex}
+  .nav-links li{border-bottom:1px solid var(--border);padding:16px 0}
+  .nav-links a{font-size:13px}
+  .dropdown{display:none !important}
+  .page-header{padding:140px 24px 60px}
+  .page-header h1{font-size:36px}
+  .servicios-group,.closing{padding-left:24px;padding-right:24px}
+  .servicio-row{grid-template-columns:40px 1fr;gap:20px}
+  .s-tag{display:none}
+  .closing-box{flex-direction:column;align-items:flex-start}
+  footer{flex-direction:column;gap:20px;text-align:center;padding:32px 24px}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo-mark" href="index.html">SM <strong>Soluciones Contables</strong></a>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="has-dropdown"><a href="servicios.html" class="active">Servicios</a>
+      <div class="dropdown">
+        <div class="dropdown-col">
+          <p class="dropdown-label">Cumplimiento patronal</p>
+          <a href="servicios.html#dictamenes">Dictámenes patronales</a>
+          <a href="servicios.html#isn">Cumplimiento ISN multi-estado</a>
+          <a href="servicios.html#repse">Auditorías y cumplimiento REPSE</a>
+          <a href="servicios.html#reingenieria">Reingeniería de nómina y beneficios</a>
+          <a href="servicios.html#preventiva">Revisión preventiva IMSS</a>
+        </div>
+        <div class="dropdown-col">
+          <p class="dropdown-label">Contabilidad y finanzas</p>
+          <a href="servicios.html#contabilidad">Contabilidad general y fiscal</a>
+          <a href="servicios.html#declaraciones">Declaraciones mensuales y anuales</a>
+          <a href="servicios.html#nomina-rh">Nómina y administración de RH</a>
+          <a href="servicios.html#planeacion">Planeación financiera y fiscal</a>
+          <a href="servicios.html#auditorias-internas">Auditorías internas y de procesos</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="sobre-mi.html">Equipo</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <a href="contacto.html" class="nav-cta">Agenda una consulta</a>
+</nav>
+
+<header class="page-header">
+  <p class="hero-eyebrow">Servicios</p>
+  <h1>Cumplimiento patronal, seguridad social y contabilidad, en un solo lugar</h1>
+  <div class="hero-rule"></div>
+  <p class="sub">Trabajo tanto en el detalle técnico ante autoridades como en la contabilidad y las finanzas del día a día de tu empresa.</p>
+</header>
+
+<section class="servicios-group">
+  <p class="sec-label">Cumplimiento patronal y seguridad social</p>
+  <h2 class="sec-h2">Auditoría y dictaminación ante el IMSS, INFONAVIT y la STPS</h2>
+
+  <div class="servicio-row" id="dictamenes">
+    <div class="s-num">01</div>
+    <div><div class="s-name">Dictámenes patronales</div><div class="s-desc">Elaboración y revisión de dictámenes de seguro social conforme a los anexos de SIDEIMSS, evitando observaciones y capitales constitutivos.</div></div>
+    <div class="s-tag">IMSS · INFONAVIT</div>
+  </div>
+  <div class="servicio-row" id="isn">
+    <div class="s-num">02</div>
+    <div><div class="s-name">Cumplimiento del ISN multi-estado</div><div class="s-desc">Dictaminación y seguimiento del Impuesto Sobre Nóminas en las 32 entidades, con control de vencimientos y prórrogas.</div></div>
+    <div class="s-tag">ISN</div>
+  </div>
+  <div class="servicio-row" id="repse">
+    <div class="s-num">03</div>
+    <div><div class="s-name">Auditorías y cumplimiento REPSE</div><div class="s-desc">Revisión de contratos de subcontratación especializada, integración de expedientes y reportes ante la STPS.</div></div>
+    <div class="s-tag">REPSE</div>
+  </div>
+  <div class="servicio-row" id="reingenieria">
+    <div class="s-num">04</div>
+    <div><div class="s-name">Reingeniería de nómina y beneficios</div><div class="s-desc">Rediseño de estructuras salariales y esquemas de previsión social para optimizar costos y cumplimiento.</div></div>
+    <div class="s-tag">Nómina</div>
+  </div>
+  <div class="servicio-row" id="preventiva">
+    <div class="s-num">05</div>
+    <div><div class="s-name">Revisión preventiva de contribuciones IMSS</div><div class="s-desc">Diagnóstico anticipado de riesgos y áreas de oportunidad antes de una revisión de la autoridad.</div></div>
+    <div class="s-tag">Preventivo</div>
+  </div>
+</section>
+
+<section class="servicios-group">
+  <p class="sec-label">Contabilidad y finanzas</p>
+  <h2 class="sec-h2">Para que la operación diaria de tu empresa esté al día</h2>
+
+  <div class="servicio-row" id="contabilidad">
+    <div class="s-num">06</div>
+    <div><div class="s-name">Contabilidad general y fiscal</div><div class="s-desc">Registro contable mensual, conciliaciones bancarias y cumplimiento de obligaciones fiscales federales.</div></div>
+    <div class="s-tag">Contabilidad</div>
+  </div>
+  <div class="servicio-row" id="declaraciones">
+    <div class="s-num">07</div>
+    <div><div class="s-name">Declaraciones mensuales y anuales</div><div class="s-desc">Cálculo y presentación de pagos provisionales, definitivos y declaración anual, personas físicas y morales.</div></div>
+    <div class="s-tag">Fiscal</div>
+  </div>
+  <div class="servicio-row" id="nomina-rh">
+    <div class="s-num">08</div>
+    <div><div class="s-name">Nómina y administración de RH</div><div class="s-desc">Timbrado, control de incidencias y cumplimiento laboral en la operación diaria.</div></div>
+    <div class="s-tag">RH</div>
+  </div>
+  <div class="servicio-row" id="planeacion">
+    <div class="s-num">09</div>
+    <div><div class="s-name">Planeación financiera y fiscal</div><div class="s-desc">Estrategias para optimizar la carga fiscal de la empresa dentro del marco legal vigente.</div></div>
+    <div class="s-tag">Planeación</div>
+  </div>
+  <div class="servicio-row" id="auditorias-internas">
+    <div class="s-num">10</div>
+    <div><div class="s-name">Auditorías internas y de procesos</div><div class="s-desc">Revisión de controles administrativos y contables para identificar riesgos operativos.</div></div>
+    <div class="s-tag">Auditoría</div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="closing-box">
+    <p>¿No estás seguro de qué servicio necesitas? Cuéntanos tu situación y te orientamos sin compromiso.</p>
+    <a href="contacto.html" class="btn-main">Agenda una consulta</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-name">SM Soluciones Contables</div>
+  <div class="foot-links">
+    <a href="index.html">Inicio</a>
+    <a href="sobre-mi.html">Equipo</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+  <div class="foot-copy">© 2026 SM Soluciones Contables</div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.nav-toggle');
+  var links=document.getElementById('nav-links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){
+      var open=links.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — SM Soluciones Contables</title>
+<meta name="description" content="Agenda una consulta con SM Soluciones Contables para cumplimiento patronal, fiscal y contable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#111111;
+  --ink-secondary:#444444;
+  --ink-tertiary:#888888;
+  --navy:#0B1F3A;
+  --navy-mid:#14305A;
+  --gold:#9A6E20;
+  --gold-light:#C49535;
+  --bg:#FFFFFF;
+  --bg-off:#F2F0EC;
+  --bg-dark:#E8E5DF;
+  --border:#C8C4BC;
+  --border-strong:#A8A39A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border)}
+.logo-mark{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;letter-spacing:0.04em;color:var(--navy);text-decoration:none}
+.logo-mark strong{font-weight:600}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--ink-secondary);text-decoration:none;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a.active{color:var(--navy);font-weight:600}
+.nav-cta{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:var(--navy);padding:9px 22px;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--navy-mid)}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:38px;height:38px}
+.nav-toggle span{display:block;width:100%;height:2px;background:var(--navy)}
+.nav-links li{position:relative}
+.dropdown{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);box-shadow:0 16px 40px rgba(11,31,58,0.14);padding:28px;gap:36px;min-width:520px;z-index:200}
+.nav-links li.has-dropdown:hover .dropdown,
+.nav-links li.has-dropdown:focus-within .dropdown{display:flex}
+.dropdown-col{display:flex;flex-direction:column;gap:11px;min-width:220px}
+.dropdown-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:2px}
+.dropdown-col a{font-size:13px;color:var(--ink-secondary);text-decoration:none;text-transform:none;letter-spacing:0;font-weight:400}
+.dropdown-col a:hover{color:var(--navy)}
+
+.hero-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:32px;font-weight:500}
+
+.contacto{padding:170px 60px 120px;background:var(--navy);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;min-height:100vh}
+.cont-h{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:400;color:#fff;line-height:1.15;margin-bottom:28px}
+.cont-sub{font-size:14px;font-weight:400;line-height:1.9;color:rgba(255,255,255,0.6);margin-bottom:56px;max-width:44ch}
+.cont-info{display:flex;flex-direction:column}
+.ci{padding:22px 0;border-top:1px solid rgba(255,255,255,0.15)}
+.ci:last-child{border-bottom:1px solid rgba(255,255,255,0.15)}
+.ci-t{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:7px;font-weight:500}
+.ci-d{font-size:14px;font-weight:400;color:rgba(255,255,255,0.85)}
+.ci-note{font-size:11px;color:rgba(255,255,255,0.35);margin-top:24px;line-height:1.6}
+
+.cont-form{padding-top:6px}
+.form-field{margin-bottom:26px}
+.form-field label{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:10px;font-weight:500}
+.form-field input,.form-field select,.form-field textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);padding:12px 16px;font-size:14px;font-weight:400;font-family:'Inter',sans-serif;color:#fff;outline:none;transition:border-color 0.2s;appearance:none;border-radius:0}
+.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,0.3)}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold-light);background:rgba(255,255,255,0.09)}
+.form-field select option{background:#0B1F3A;color:#fff}
+.form-field textarea{height:90px;resize:none}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-submit{margin-top:8px;background:var(--gold);color:#fff;border:none;padding:15px 40px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s}
+.form-submit:hover{background:var(--gold-light)}
+.form-note{font-size:11px;color:rgba(255,255,255,0.4);margin-top:14px;line-height:1.6}
+
+footer{background:#060E1A;padding:40px 60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.08)}
+.foot-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:rgba(255,255,255,0.55);letter-spacing:0.04em}
+.foot-links{display:flex;gap:28px}
+.foot-links a{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;font-weight:500}
+.foot-links a:hover{color:rgba(255,255,255,0.75)}
+.foot-copy{font-size:11px;color:rgba(255,255,255,0.25);font-weight:400}
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+
+@media(max-width:768px){
+  nav{padding:0 24px}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;padding:12px 24px;gap:0;overflow-y:auto;z-index:150}
+  .nav-links.open{display:flex}
+  .nav-links li{border-bottom:1px solid var(--border);padding:16px 0}
+  .nav-links a{font-size:13px}
+  .dropdown{display:none !important}
+  .contacto{padding:130px 24px 80px;grid-template-columns:1fr;gap:48px;min-height:auto}
+  .form-row{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:20px;text-align:center;padding:32px 24px}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo-mark" href="index.html">SM <strong>Soluciones Contables</strong></a>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="has-dropdown"><a href="servicios.html">Servicios</a>
+      <div class="dropdown">
+        <div class="dropdown-col">
+          <p class="dropdown-label">Cumplimiento patronal</p>
+          <a href="servicios.html#dictamenes">Dictámenes patronales</a>
+          <a href="servicios.html#isn">Cumplimiento ISN multi-estado</a>
+          <a href="servicios.html#repse">Auditorías y cumplimiento REPSE</a>
+          <a href="servicios.html#reingenieria">Reingeniería de nómina y beneficios</a>
+          <a href="servicios.html#preventiva">Revisión preventiva IMSS</a>
+        </div>
+        <div class="dropdown-col">
+          <p class="dropdown-label">Contabilidad y finanzas</p>
+          <a href="servicios.html#contabilidad">Contabilidad general y fiscal</a>
+          <a href="servicios.html#declaraciones">Declaraciones mensuales y anuales</a>
+          <a href="servicios.html#nomina-rh">Nómina y administración de RH</a>
+          <a href="servicios.html#planeacion">Planeación financiera y fiscal</a>
+          <a href="servicios.html#auditorias-internas">Auditorías internas y de procesos</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="sobre-mi.html">Equipo</a></li>
+    <li><a href="contacto.html" class="active">Contacto</a></li>
+  </ul>
+  <a href="contacto.html" class="nav-cta">Agenda una consulta</a>
+</nav>
+
+<section class="contacto">
+  <div>
+    <p class="hero-eyebrow">Contacto</p>
+    <h2 class="cont-h">Cuéntanos sobre tu empresa</h2>
+    <p class="cont-sub">Una primera conversación es suficiente para saber si podemos ayudarte y cómo.</p>
+    <div class="cont-info">
+      <div class="ci"><div class="ci-t">Correo</div><div class="ci-d">contacto@smsolucionescontables.com</div></div>
+      <div class="ci"><div class="ci-t">Teléfono / WhatsApp</div><div class="ci-d">33 0000 0000</div></div>
+      <div class="ci"><div class="ci-t">Ubicación</div><div class="ci-d">Zapopan, Jalisco · Atención presencial y virtual</div></div>
+    </div>
+    <p class="ci-note">*Actualiza el correo y teléfono con tus datos reales antes de publicar el sitio.</p>
+  </div>
+
+  <form class="cont-form" action="mailto:contacto@smsolucionescontables.com" method="post" enctype="text/plain">
+    <div class="form-row">
+      <div class="form-field"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre completo" required></div>
+      <div class="form-field"><label>Empresa</label><input type="text" name="empresa" placeholder="Nombre de la empresa"></div>
+    </div>
+    <div class="form-field"><label>Correo electrónico</label><input type="email" name="correo" placeholder="correo@empresa.com" required></div>
+    <div class="form-field"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+52"></div>
+    <div class="form-field">
+      <label>Servicio de interés</label>
+      <select name="servicio">
+        <option value="">Selecciona</option>
+        <option>Dictámenes IMSS/INFONAVIT</option>
+        <option>Cumplimiento ISN multi-estado</option>
+        <option>Auditorías y cumplimiento REPSE</option>
+        <option>Reingeniería de nómina y beneficios</option>
+        <option>Revisión preventiva de contribuciones IMSS</option>
+        <option>Contabilidad general y fiscal</option>
+        <option>Declaraciones mensuales y anuales</option>
+        <option>Nómina y administración de RH</option>
+        <option>Planeación financiera y fiscal</option>
+        <option>Auditorías internas y de procesos</option>
+        <option>No estoy seguro</option>
+      </select>
+    </div>
+    <div class="form-field"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos brevemente tu situación..." required></textarea></div>
+    <p class="form-note">Este botón abre tu cliente de correo. Para recibir los mensajes directamente en el sitio, conecta el formulario a un servicio como Formspree.</p>
+    <button type="submit" class="form-submit">Enviar mensaje</button>
+  </form>
+</section>
+
+<footer>
+  <div class="foot-name">SM Soluciones Contables</div>
+  <div class="foot-links">
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="sobre-mi.html">Equipo</a>
+  </div>
+  <div class="foot-copy">© 2026 SM Soluciones Contables</div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.nav-toggle');
+  var links=document.getElementById('nav-links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){
+      var open=links.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
+});
+</script>
+</body>
+</html>
