@@ -87,13 +87,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:72px;d
 .servicios-teaser{padding:120px 60px;background:var(--bg)}
 .s-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:72px}
 .s-header-right{font-size:14px;font-weight:400;line-height:1.9;color:var(--ink-secondary)}
-.servicio-row{display:grid;grid-template-columns:60px 1fr 150px;align-items:start;padding:32px 0;border-top:1px solid var(--border-strong);gap:32px;transition:background 0.15s}
-.servicio-row:last-child{border-bottom:1px solid var(--border-strong)}
-.servicio-row:hover{background:var(--bg-off);padding-left:12px;padding-right:12px;margin-left:-12px;margin-right:-12px}
-.s-num{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;color:var(--border-strong);padding-top:5px}
-.s-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--navy);margin-bottom:10px}
-.s-desc{font-size:13px;font-weight:400;line-height:1.8;color:var(--ink-secondary);max-width:520px}
-.s-tag{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);padding-top:8px;text-align:right}
+.teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.teaser-card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--border);background:var(--bg);transition:border-color 0.2s,box-shadow 0.2s}
+.teaser-card:hover{border-color:var(--gold-light);box-shadow:0 12px 32px rgba(11,31,58,0.10)}
+.teaser-card img{display:block;width:100%;height:auto;aspect-ratio:3/2;border-bottom:1px solid var(--border)}
+.teaser-card .s-tag{margin:22px 24px 0}
+.teaser-card .s-name{margin:8px 24px 0}
+.teaser-card .s-desc{margin:8px 24px 26px}
+.s-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--navy);line-height:1.2}
+.s-desc{font-size:13px;font-weight:400;line-height:1.8;color:var(--ink-secondary)}
+.s-tag{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold)}
 .more-link{display:inline-block;margin-top:48px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold)}
 
 /* NOSOTROS (reused for differentiators) */
@@ -150,6 +153,10 @@ footer{background:#060E1A;padding:40px 60px;display:flex;align-items:center;just
 
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
 
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:300;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.22);transition:transform 0.2s}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float svg{width:30px;height:30px}
+
 @media(max-width:768px){
   nav{padding:0 24px}
   .nav-toggle{display:flex}
@@ -167,8 +174,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .servicios-teaser,.nosotros,.proceso,.contacto{padding:80px 24px}
   .s-header,.nosotros,.contacto{grid-template-columns:1fr;gap:40px}
   .proceso-grid{grid-template-columns:1fr 1fr}
-  .servicio-row{grid-template-columns:40px 1fr;gap:20px}
-  .s-tag{display:none}
+  .teaser-grid{grid-template-columns:1fr;gap:20px}
   .hero-stats{grid-template-columns:1fr 1fr}
   footer{flex-direction:column;gap:20px;text-align:center;padding:32px 24px}
   .foot-links{flex-wrap:wrap;justify-content:center}
@@ -245,24 +251,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <p class="sec-label">Áreas de práctica</p>
       <h2 class="sec-h2">Cumplimiento patronal, seguridad social y contabilidad</h2>
     </div>
-    <div class="s-header-right">Trabajo tanto en el detalle técnico ante autoridades como en la contabilidad y las finanzas del día a día de tu empresa.</div>
+    <div class="s-header-right">Trabajamos tanto en el detalle técnico ante las autoridades como en la contabilidad y las finanzas del día a día de tu empresa.</div>
   </div>
-  <div>
-    <div class="servicio-row">
-      <div class="s-num">01</div>
-      <div><div class="s-name">Dictámenes patronales</div><div class="s-desc">Elaboración y revisión de dictámenes de seguro social conforme a los anexos de SIDEIMSS.</div></div>
-      <div class="s-tag">IMSS · INFONAVIT</div>
-    </div>
-    <div class="servicio-row">
-      <div class="s-num">02</div>
-      <div><div class="s-name">Auditorías y cumplimiento REPSE</div><div class="s-desc">Revisión de contratos de subcontratación especializada y expedientes ante la STPS.</div></div>
-      <div class="s-tag">REPSE</div>
-    </div>
-    <div class="servicio-row">
-      <div class="s-num">03</div>
-      <div><div class="s-name">Contabilidad general y fiscal</div><div class="s-desc">Registro contable, conciliaciones y presentación de obligaciones fiscales mensuales y anuales.</div></div>
-      <div class="s-tag">Contabilidad</div>
-    </div>
+  <div class="teaser-grid">
+    <a class="teaser-card" href="servicios.html#dictamenes">
+      <img src="img/servicios/dictamenes.svg" alt="Dictamen con sello de validación" loading="lazy">
+      <span class="s-tag">IMSS · INFONAVIT</span>
+      <span class="s-name">Dictámenes patronales</span>
+      <span class="s-desc">La certeza de que tus cuotas están bien pagadas, antes de que la autoridad lo revise.</span>
+    </a>
+    <a class="teaser-card" href="servicios.html#repse">
+      <img src="img/servicios/repse.svg" alt="Contrato entre dos empresas con registro REPSE" loading="lazy">
+      <span class="s-tag">REPSE</span>
+      <span class="s-name">Auditorías y cumplimiento REPSE</span>
+      <span class="s-desc">Subcontratación documentada y defendible, para no perder deducciones ni el IVA acreditable.</span>
+    </a>
+    <a class="teaser-card" href="servicios.html#contabilidad">
+      <img src="img/servicios/contabilidad.svg" alt="Libro contable y calculadora" loading="lazy">
+      <span class="s-tag">Contabilidad</span>
+      <span class="s-name">Contabilidad general y fiscal</span>
+      <span class="s-desc">Números confiables cada mes, para cumplir con el SAT y decidir con información.</span>
+    </a>
   </div>
   <a href="servicios.html" class="more-link">Ver todos los servicios →</a>
 </section>
@@ -281,7 +290,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
     <div class="valor-item">
       <div class="v-t">Proactividad</div>
-      <div class="v-d">Monitoreo cambios normativos para anticipar su efecto en tu operación.</div>
+      <div class="v-d">Monitoreamos los cambios normativos para anticipar su efecto en tu operación.</div>
     </div>
     <div class="valor-item">
       <div class="v-t">Confidencialidad</div>
@@ -289,7 +298,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
     <div class="valor-item">
       <div class="v-t">Herramientas propias</div>
-      <div class="v-d">Construyo herramientas de automatización que hacen cada auditoría más eficiente.</div>
+      <div class="v-d">Desarrollamos herramientas de automatización que hacen cada auditoría más eficiente.</div>
     </div>
   </div>
 </section>
@@ -322,6 +331,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
   </div>
 </section>
+
+<a class="wa-float" href="https://wa.me/523329203295?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.3.6 4.5 1.8 6.5L3 29l6.9-1.8c1.9 1 4 1.6 6.1 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3z" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M11.6 9.3c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.4 3.6 1.5 3.9c.2.2 2.6 4.1 6.5 5.6 3.2 1.3 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.2-.7-.4l-2.4-1.2c-.3-.1-.6-.2-.8.2l-1.1 1.4c-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7z" fill="#fff"/></svg>
+</a>
 
 <footer>
   <div class="foot-name">SM Soluciones Contables</div>

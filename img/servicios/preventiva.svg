@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Revisión preventiva antes de la autoridad">
+  <rect width="240" height="160" fill="#F2F0EC"/>
+  <path d="M104 24l46 16v34c0 30-20 48-46 60-26-12-46-30-46-60V40z" fill="#fff" stroke="#0B1F3A" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M84 80l14 14 28-30" fill="none" stroke="#0B1F3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="162" cy="104" r="24" fill="#F2F0EC" stroke="#C49535" stroke-width="5"/>
+  <path d="M179 121l22 22" stroke="#C49535" stroke-width="7" stroke-linecap="round"/>
+  <path d="M152 104h20M162 94v20" stroke="#0B1F3A" stroke-width="2" stroke-linecap="round"/>
+</svg>

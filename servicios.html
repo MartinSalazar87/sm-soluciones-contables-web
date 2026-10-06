@@ -62,13 +62,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:72px;d
 
 .servicios-group{padding:40px 60px 40px}
 .group-intro{font-size:14px;line-height:1.8;color:var(--ink-secondary);max-width:60ch;margin-bottom:8px}
-.servicio-row{display:grid;grid-template-columns:60px 1fr 170px;align-items:start;padding:32px 0;border-top:1px solid var(--border-strong);gap:32px;transition:background 0.15s;scroll-margin-top:100px}
-.servicios-group:last-of-type .servicio-row:last-child{border-bottom:1px solid var(--border-strong)}
-.servicio-row:hover{background:var(--bg-off);padding-left:12px;padding-right:12px;margin-left:-12px;margin-right:-12px}
-.s-num{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;color:var(--border-strong);padding-top:5px}
-.s-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--navy);margin-bottom:10px}
-.s-desc{font-size:13px;font-weight:400;line-height:1.8;color:var(--ink-secondary);max-width:540px}
-.s-tag{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);padding-top:8px;text-align:right}
+.servicios-group .sec-h2{margin-bottom:24px}
+.servicio-card{display:grid;grid-template-columns:240px 1fr;gap:44px;align-items:start;padding:44px 0;border-top:1px solid var(--border-strong);scroll-margin-top:100px}
+.servicios-group:last-of-type .servicio-card:last-child{border-bottom:1px solid var(--border-strong)}
+.s-img{display:block;width:240px;height:auto;aspect-ratio:3/2;border:1px solid var(--border)}
+.s-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.s-num{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;color:var(--border-strong)}
+.s-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--navy)}
+.s-tag{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-light);padding:3px 8px}
+.s-need{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.45;color:var(--gold);margin-bottom:12px;max-width:56ch}
+.s-desc{font-size:14px;font-weight:400;line-height:1.8;color:var(--ink-secondary);max-width:62ch}
+.s-cols{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;margin-top:22px;max-width:760px}
+.s-k{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-tertiary);margin-bottom:10px}
+.s-list{list-style:none}
+.s-list li{position:relative;padding-left:18px;font-size:13px;line-height:1.7;color:var(--ink-secondary);margin-bottom:5px}
+.s-list li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:2px;background:var(--gold)}
+.s-result{font-size:13px;line-height:1.75;color:var(--navy);font-weight:500;border-left:2px solid var(--gold);padding-left:14px}
 
 .closing{padding:40px 60px 120px}
 .closing-box{background:var(--bg-off);border:1px solid var(--border);padding:48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
@@ -85,6 +94,10 @@ footer{background:#060E1A;padding:40px 60px;display:flex;align-items:center;just
 
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
 
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:300;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.22);transition:transform 0.2s}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float svg{width:30px;height:30px}
+
 @media(max-width:768px){
   nav{padding:0 24px}
   .nav-toggle{display:flex}
@@ -96,8 +109,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   .page-header{padding:140px 24px 60px}
   .page-header h1{font-size:36px}
   .servicios-group,.closing{padding-left:24px;padding-right:24px}
-  .servicio-row{grid-template-columns:40px 1fr;gap:20px}
-  .s-tag{display:none}
+  .servicio-card{grid-template-columns:1fr;gap:20px;padding:32px 0}
+  .s-img{width:100%;max-width:360px}
+  .s-name{font-size:24px}
+  .s-cols{grid-template-columns:1fr;gap:20px}
   .closing-box{flex-direction:column;align-items:flex-start}
   footer{flex-direction:column;gap:20px;text-align:center;padding:32px 24px}
   .foot-links{flex-wrap:wrap;justify-content:center}
@@ -143,69 +158,187 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   <p class="hero-eyebrow">Servicios</p>
   <h1>Cumplimiento patronal, seguridad social y contabilidad, en un solo lugar</h1>
   <div class="hero-rule"></div>
-  <p class="sub">Trabajo tanto en el detalle técnico ante autoridades como en la contabilidad y las finanzas del día a día de tu empresa.</p>
+  <p class="sub">Trabajamos tanto en el detalle técnico ante las autoridades como en la contabilidad y las finanzas del día a día de tu empresa.</p>
 </header>
 
 <section class="servicios-group">
   <p class="sec-label">Cumplimiento patronal y seguridad social</p>
   <h2 class="sec-h2">Auditoría y dictaminación ante el IMSS, INFONAVIT y la STPS</h2>
 
-  <div class="servicio-row" id="dictamenes">
-    <div class="s-num">01</div>
-    <div><div class="s-name">Dictámenes patronales</div><div class="s-desc">Elaboración y revisión de dictámenes de seguro social conforme a los anexos de SIDEIMSS, evitando observaciones y capitales constitutivos.</div></div>
-    <div class="s-tag">IMSS · INFONAVIT</div>
-  </div>
-  <div class="servicio-row" id="isn">
-    <div class="s-num">02</div>
-    <div><div class="s-name">Cumplimiento del ISN multi-estado</div><div class="s-desc">Dictaminación y seguimiento del Impuesto Sobre Nóminas en las 32 entidades, con control de vencimientos y prórrogas.</div></div>
-    <div class="s-tag">ISN</div>
-  </div>
-  <div class="servicio-row" id="repse">
-    <div class="s-num">03</div>
-    <div><div class="s-name">Auditorías y cumplimiento REPSE</div><div class="s-desc">Revisión de contratos de subcontratación especializada, integración de expedientes y reportes ante la STPS.</div></div>
-    <div class="s-tag">REPSE</div>
-  </div>
-  <div class="servicio-row" id="reingenieria">
-    <div class="s-num">04</div>
-    <div><div class="s-name">Reingeniería de nómina y beneficios</div><div class="s-desc">Rediseño de estructuras salariales y esquemas de previsión social para optimizar costos y cumplimiento.</div></div>
-    <div class="s-tag">Nómina</div>
-  </div>
-  <div class="servicio-row" id="preventiva">
-    <div class="s-num">05</div>
-    <div><div class="s-name">Revisión preventiva de contribuciones IMSS</div><div class="s-desc">Diagnóstico anticipado de riesgos y áreas de oportunidad antes de una revisión de la autoridad.</div></div>
-    <div class="s-tag">Preventivo</div>
-  </div>
+  <article class="servicio-card" id="dictamenes">
+    <img class="s-img" src="img/servicios/dictamenes.svg" alt="Dictamen con sello de validación" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">01</span><h3 class="s-name">Dictámenes patronales</h3><span class="s-tag">IMSS · INFONAVIT</span></div>
+      <p class="s-need">Tienes la certeza de que tus cuotas están bien pagadas, antes de que la autoridad lo revise.</p>
+      <p class="s-desc">Revisamos a fondo la integración del salario base de cotización, las cuotas obrero-patronales y las aportaciones de vivienda, y elaboramos el dictamen conforme a los anexos de SIDEIMSS.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Revisión de nómina, SUA y emisiones del ejercicio</li>
+          <li>Determinación y corrección de diferencias</li>
+          <li>Elaboración y presentación de anexos</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Un dictamen presentado en tiempo, con las diferencias corregidas por ti y no determinadas por la autoridad.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="isn">
+    <img class="s-img" src="img/servicios/isn.svg" alt="32 entidades federativas bajo un mismo control" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">02</span><h3 class="s-name">Cumplimiento del ISN multi-estado</h3><span class="s-tag">ISN</span></div>
+      <p class="s-need">Si tienes personal en varios estados, cada uno tiene su propia tasa, sus plazos y sus reglas.</p>
+      <p class="s-desc">Ordenamos el Impuesto Sobre Nóminas de todas tus plazas en un solo control: qué se paga, dónde y cuándo, incluyendo los dictámenes estatales cuando aplican.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Mapa de obligaciones por entidad</li>
+          <li>Revisión de bases, tasas y pagos</li>
+          <li>Dictamen estatal y control de vencimientos</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Ningún estado olvidado, ningún vencimiento perdido, en las 32 entidades.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="repse">
+    <img class="s-img" src="img/servicios/repse.svg" alt="Contrato entre dos empresas con registro REPSE" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">03</span><h3 class="s-name">Auditorías y cumplimiento REPSE</h3><span class="s-tag">REPSE</span></div>
+      <p class="s-need">Una subcontratación mal documentada puede costarte la deducción del gasto, el IVA acreditable y la responsabilidad solidaria.</p>
+      <p class="s-desc">Revisamos que tus servicios especializados, contratados o prestados, estén respaldados ante la STPS, el IMSS, el INFONAVIT y el SAT.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Vigencia del registro y objeto de los servicios</li>
+          <li>Revisión de contratos y expedientes</li>
+          <li>Informes periódicos ante las autoridades</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Una subcontratación documentada y defendible ante cualquier revisión.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="reingenieria">
+    <img class="s-img" src="img/servicios/reingenieria.svg" alt="Costo de nómina optimizado" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">04</span><h3 class="s-name">Reingeniería de nómina y beneficios</h3><span class="s-tag">Nómina</span></div>
+      <p class="s-need">Cuando la nómina pesa demasiado, o las prestaciones no se integran como deberían, pagas de más o te expones.</p>
+      <p class="s-desc">Analizamos cada concepto de pago y rediseñamos tu estructura salarial y de previsión social para que sea eficiente y cumpla con la ley.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Diagnóstico de conceptos y su integración</li>
+          <li>Propuesta de estructura y previsión social</li>
+          <li>Simulación del costo antes y después</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Un costo de nómina optimizado, sin crear riesgos nuevos.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="preventiva">
+    <img class="s-img" src="img/servicios/preventiva.svg" alt="Revisión preventiva antes de la autoridad" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">05</span><h3 class="s-name">Revisión preventiva de contribuciones IMSS</h3><span class="s-tag">Preventivo</span></div>
+      <p class="s-need">Encontrar un error antes que la autoridad cuesta mucho menos que corregirlo después.</p>
+      <p class="s-desc">Hacemos la revisión que haría el IMSS, antes de una invitación, una visita o un dictamen, para que tengas tiempo de corregir por tu cuenta.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Confronta de nómina, SUA y CFDI de nómina</li>
+          <li>Altas, bajas, modificaciones y riesgo de trabajo</li>
+          <li>Informe de riesgos con prioridades</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Riesgos identificados a tiempo y un plan claro para resolverlos.</p></div>
+      </div>
+    </div>
+  </article>
 </section>
 
 <section class="servicios-group">
   <p class="sec-label">Contabilidad y finanzas</p>
   <h2 class="sec-h2">Para que la operación diaria de tu empresa esté al día</h2>
 
-  <div class="servicio-row" id="contabilidad">
-    <div class="s-num">06</div>
-    <div><div class="s-name">Contabilidad general y fiscal</div><div class="s-desc">Registro contable mensual, conciliaciones bancarias y cumplimiento de obligaciones fiscales federales.</div></div>
-    <div class="s-tag">Contabilidad</div>
-  </div>
-  <div class="servicio-row" id="declaraciones">
-    <div class="s-num">07</div>
-    <div><div class="s-name">Declaraciones mensuales y anuales</div><div class="s-desc">Cálculo y presentación de pagos provisionales, definitivos y declaración anual, personas físicas y morales.</div></div>
-    <div class="s-tag">Fiscal</div>
-  </div>
-  <div class="servicio-row" id="nomina-rh">
-    <div class="s-num">08</div>
-    <div><div class="s-name">Nómina y administración de RH</div><div class="s-desc">Timbrado, control de incidencias y cumplimiento laboral en la operación diaria.</div></div>
-    <div class="s-tag">RH</div>
-  </div>
-  <div class="servicio-row" id="planeacion">
-    <div class="s-num">09</div>
-    <div><div class="s-name">Planeación financiera y fiscal</div><div class="s-desc">Estrategias para optimizar la carga fiscal de la empresa dentro del marco legal vigente.</div></div>
-    <div class="s-tag">Planeación</div>
-  </div>
-  <div class="servicio-row" id="auditorias-internas">
-    <div class="s-num">10</div>
-    <div><div class="s-name">Auditorías internas y de procesos</div><div class="s-desc">Revisión de controles administrativos y contables para identificar riesgos operativos.</div></div>
-    <div class="s-tag">Auditoría</div>
-  </div>
+  <article class="servicio-card" id="contabilidad">
+    <img class="s-img" src="img/servicios/contabilidad.svg" alt="Libro contable y calculadora" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">06</span><h3 class="s-name">Contabilidad general y fiscal</h3><span class="s-tag">Contabilidad</span></div>
+      <p class="s-need">Sin una contabilidad al día no sabes cómo va tu negocio, y el SAT sí lo sabe.</p>
+      <p class="s-desc">Llevamos tu contabilidad cada mes, ordenada y conciliada, para que cumplas y tomes decisiones con números confiables.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Registro mensual y conciliaciones bancarias</li>
+          <li>Contabilidad electrónica ante el SAT</li>
+          <li>Estados financieros mensuales</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Información financiera confiable, cada mes y a tiempo.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="declaraciones">
+    <img class="s-img" src="img/servicios/declaraciones.svg" alt="Calendario de obligaciones fiscales cumplidas" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">07</span><h3 class="s-name">Declaraciones mensuales y anuales</h3><span class="s-tag">Fiscal</span></div>
+      <p class="s-need">Un pago tardío o mal calculado genera multas, recargos y una opinión de cumplimiento negativa.</p>
+      <p class="s-desc">Calculamos y presentamos tus pagos provisionales, definitivos y tu declaración anual, para personas físicas y morales.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>ISR, IVA, retenciones y declaraciones informativas</li>
+          <li>Conciliación contra tus CFDI</li>
+          <li>Seguimiento de tu opinión de cumplimiento</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Obligaciones al corriente y una opinión de cumplimiento positiva.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="nomina-rh">
+    <img class="s-img" src="img/servicios/nomina-rh.svg" alt="Equipo de trabajo y recibo de nómina" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">08</span><h3 class="s-name">Nómina y administración de RH</h3><span class="s-tag">RH</span></div>
+      <p class="s-need">Tu equipo espera su pago puntual y correcto; el IMSS y el SAT, también.</p>
+      <p class="s-desc">Calculamos y timbramos tu nómina, controlamos las incidencias y mantenemos al día los movimientos ante el IMSS.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Cálculo y timbrado de CFDI de nómina</li>
+          <li>Altas, bajas y modificaciones salariales</li>
+          <li>Finiquitos e incidencias</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Una nómina puntual, consistente entre lo que pagas, lo que timbras y lo que reportas.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="planeacion">
+    <img class="s-img" src="img/servicios/planeacion.svg" alt="Proyección financiera y objetivo" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">09</span><h3 class="s-name">Planeación financiera y fiscal</h3><span class="s-tag">Planeación</span></div>
+      <p class="s-need">Las decisiones importantes (invertir, contratar, repartir utilidades) tienen un efecto fiscal que conviene conocer antes.</p>
+      <p class="s-desc">Proyectamos escenarios para que decidas con números y optimices tu carga fiscal dentro del marco legal vigente.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Proyección de impuestos y flujo de efectivo</li>
+          <li>Comparación de escenarios</li>
+          <li>Recomendaciones con su fundamento</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Decisiones informadas y sin sorpresas fiscales a fin de año.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="servicio-card" id="auditorias-internas">
+    <img class="s-img" src="img/servicios/auditorias-internas.svg" alt="Revisión de procesos y controles" loading="lazy">
+    <div>
+      <div class="s-head"><span class="s-num">10</span><h3 class="s-name">Auditorías internas y de procesos</h3><span class="s-tag">Auditoría</span></div>
+      <p class="s-need">Los errores que se repiten y las fugas de dinero casi siempre vienen de un proceso sin control.</p>
+      <p class="s-desc">Revisamos tus procesos administrativos y contables para encontrar dónde están los riesgos y cómo cerrarlos.</p>
+      <div class="s-cols">
+        <div><p class="s-k">Qué incluye</p><ul class="s-list">
+          <li>Mapeo de procesos clave</li>
+          <li>Pruebas de los controles existentes</li>
+          <li>Recomendaciones ordenadas por prioridad</li>
+        </ul></div>
+        <div><p class="s-k">Resultado</p><p class="s-result">Un informe claro, con acciones concretas para tu equipo.</p></div>
+      </div>
+    </div>
+  </article>
 </section>
 
 <section class="closing">
@@ -214,6 +347,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
     <a href="contacto.html" class="btn-main">Agenda una consulta</a>
   </div>
 </section>
+
+<a class="wa-float" href="https://wa.me/523329203295?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.3.6 4.5 1.8 6.5L3 29l6.9-1.8c1.9 1 4 1.6 6.1 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3z" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M11.6 9.3c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.4 3.6 1.5 3.9c.2.2 2.6 4.1 6.5 5.6 3.2 1.3 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.2-.7-.4l-2.4-1.2c-.3-.1-.6-.2-.8.2l-1.1 1.4c-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7z" fill="#fff"/></svg>
+</a>
 
 <footer>
   <div class="foot-name">SM Soluciones Contables</div>

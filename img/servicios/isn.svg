@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="32 entidades federativas bajo control">
+  <rect width="240" height="160" fill="#F2F0EC"/>
+  <g stroke="#0B1F3A" stroke-width="1.5">
+    <!-- 32 casillas: una por entidad -->
+    <g fill="#fff">
+      <rect x="40" y="30" width="14" height="14"/><rect x="58" y="30" width="14" height="14"/><rect x="76" y="30" width="14" height="14"/><rect x="94" y="30" width="14" height="14"/><rect x="112" y="30" width="14" height="14"/><rect x="130" y="30" width="14" height="14"/><rect x="148" y="30" width="14" height="14"/><rect x="166" y="30" width="14" height="14"/>
+      <rect x="40" y="48" width="14" height="14"/><rect x="76" y="48" width="14" height="14"/><rect x="94" y="48" width="14" height="14"/><rect x="130" y="48" width="14" height="14"/><rect x="148" y="48" width="14" height="14"/><rect x="166" y="48" width="14" height="14"/>
+      <rect x="40" y="66" width="14" height="14"/><rect x="58" y="66" width="14" height="14"/><rect x="94" y="66" width="14" height="14"/><rect x="112" y="66" width="14" height="14"/><rect x="130" y="66" width="14" height="14"/><rect x="166" y="66" width="14" height="14"/>
+      <rect x="40" y="84" width="14" height="14"/><rect x="58" y="84" width="14" height="14"/><rect x="76" y="84" width="14" height="14"/><rect x="112" y="84" width="14" height="14"/><rect x="148" y="84" width="14" height="14"/><rect x="166" y="84" width="14" height="14"/>
+    </g>
+    <g fill="#C49535">
+      <rect x="58" y="48" width="14" height="14"/><rect x="112" y="48" width="14" height="14"/>
+      <rect x="76" y="66" width="14" height="14"/><rect x="148" y="66" width="14" height="14"/>
+      <rect x="94" y="84" width="14" height="14"/><rect x="130" y="84" width="14" height="14"/>
+    </g>
+  </g>
+  <text x="40" y="128" font-family="Georgia,serif" font-size="22" fill="#0B1F3A">32</text>
+  <text x="72" y="127" font-family="Arial,sans-serif" font-size="9" fill="#444" letter-spacing="1.2">ENTIDADES, UN CONTROL</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Libro contable y calculadora">
+  <rect width="240" height="160" fill="#F2F0EC"/>
+  <g fill="#fff" stroke="#0B1F3A" stroke-width="2" stroke-linejoin="round">
+    <path d="M30 36q36-10 70 0v96q-34-10-70 0z"/>
+    <path d="M100 36q36-10 70 0v96q-34-10-70 0z"/>
+  </g>
+  <g stroke="#0B1F3A" stroke-width="1.2">
+    <path d="M40 54h50M40 66h50M40 78h50M40 90h50M40 102h50M40 114h50"/>
+    <path d="M110 54h50M110 66h50M110 78h50M110 90h50M110 102h50"/>
+    <path d="M72 46v80M142 46v72"/>
+  </g>
+  <path d="M110 114h50" stroke="#C49535" stroke-width="3"/>
+  <g transform="translate(168 78)">
+    <rect width="44" height="58" rx="4" fill="#0B1F3A"/>
+    <rect x="6" y="6" width="32" height="12" fill="#C49535"/>
+    <g fill="#fff"><rect x="6" y="24" width="8" height="7"/><rect x="18" y="24" width="8" height="7"/><rect x="30" y="24" width="8" height="7"/><rect x="6" y="35" width="8" height="7"/><rect x="18" y="35" width="8" height="7"/><rect x="30" y="35" width="8" height="7"/><rect x="6" y="46" width="8" height="7"/><rect x="18" y="46" width="8" height="7"/><rect x="30" y="46" width="8" height="7"/></g>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Proyección financiera y objetivo">
+  <rect width="240" height="160" fill="#F2F0EC"/>
+  <path d="M30 30v100h150" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <g stroke="#C8C4BC" stroke-width="1"><path d="M30 105h150M30 80h150M30 55h150"/></g>
+  <path d="M34 118L66 100 92 108 124 76 150 82 176 48" fill="none" stroke="#0B1F3A" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M124 76L150 70 176 36" fill="none" stroke="#C49535" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <g fill="#0B1F3A"><circle cx="66" cy="100" r="3.5"/><circle cx="92" cy="108" r="3.5"/><circle cx="124" cy="76" r="3.5"/><circle cx="176" cy="48" r="3.5"/></g>
+  <g transform="translate(196 44)">
+    <circle r="20" fill="#fff" stroke="#0B1F3A" stroke-width="2"/>
+    <circle r="12" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+    <circle r="5" fill="#C49535"/>
+  </g>
+</svg>

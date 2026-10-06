@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Calendario de obligaciones fiscales cumplidas">
+  <rect width="240" height="160" fill="#F2F0EC"/>
+  <rect x="46" y="34" width="120" height="100" fill="#fff" stroke="#0B1F3A" stroke-width="2"/>
+  <rect x="46" y="34" width="120" height="22" fill="#0B1F3A"/>
+  <path d="M70 26v16M142 26v16" stroke="#0B1F3A" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#C8C4BC" stroke-width="1"><path d="M46 82h120M46 108h120M76 56v78M106 56v78M136 56v78"/></g>
+  <g fill="none" stroke="#C49535" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M54 70l5 5 9-10"/><path d="M84 70l5 5 9-10"/><path d="M114 70l5 5 9-10"/><path d="M144 70l5 5 9-10"/>
+    <path d="M54 96l5 5 9-10"/><path d="M84 96l5 5 9-10"/>
+  </g>
+  <g transform="translate(176 66)">
+    <path d="M0 22L46 0 36 50 22 34z" fill="#fff" stroke="#0B1F3A" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M22 34L46 0" stroke="#0B1F3A" stroke-width="2"/>
+  </g>
+</svg>
