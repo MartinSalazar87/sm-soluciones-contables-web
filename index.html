@@ -90,7 +90,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:72px;d
 .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .teaser-card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--border);background:var(--bg);transition:border-color 0.2s,box-shadow 0.2s}
 .teaser-card:hover{border-color:var(--gold-light);box-shadow:0 12px 32px rgba(11,31,58,0.10)}
-.teaser-card img{display:block;width:100%;height:auto;aspect-ratio:3/2;border-bottom:1px solid var(--border)}
+.teaser-card img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;filter:saturate(0.82) contrast(1.03)}
+.nos-foto{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;margin-top:36px;filter:saturate(0.82) contrast(1.03)}
 .teaser-card .s-tag{margin:22px 24px 0}
 .teaser-card .s-name{margin:8px 24px 0}
 .teaser-card .s-desc{margin:8px 24px 26px}
@@ -255,19 +256,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   </div>
   <div class="teaser-grid">
     <a class="teaser-card" href="servicios.html#dictamenes">
-      <img src="img/servicios/dictamenes.svg" alt="Dictamen con sello de validación" loading="lazy">
+      <img src="img/fotos/dictamenes.jpg" alt="Dictamen con sello de validación" loading="lazy">
       <span class="s-tag">IMSS · INFONAVIT</span>
       <span class="s-name">Dictámenes patronales</span>
       <span class="s-desc">La certeza de que tus cuotas están bien pagadas, antes de que la autoridad lo revise.</span>
     </a>
     <a class="teaser-card" href="servicios.html#repse">
-      <img src="img/servicios/repse.svg" alt="Contrato entre dos empresas con registro REPSE" loading="lazy">
+      <img src="img/fotos/repse.jpg" alt="Contrato entre dos empresas con registro REPSE" loading="lazy">
       <span class="s-tag">REPSE</span>
       <span class="s-name">Auditorías y cumplimiento REPSE</span>
       <span class="s-desc">Subcontratación documentada y defendible, para no perder deducciones ni el IVA acreditable.</span>
     </a>
     <a class="teaser-card" href="servicios.html#contabilidad">
-      <img src="img/servicios/contabilidad.svg" alt="Libro contable y calculadora" loading="lazy">
+      <img src="img/fotos/contabilidad.jpg" alt="Libro contable y calculadora" loading="lazy">
       <span class="s-tag">Contabilidad</span>
       <span class="s-name">Contabilidad general y fiscal</span>
       <span class="s-desc">Números confiables cada mes, para cumplir con el SAT y decidir con información.</span>
@@ -282,6 +283,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     <h2 class="nos-h">Metodologías claras, para tu equipo técnico y para quien firma el cheque</h2>
     <p class="nos-p">Cada entregable —dictamen, cédula de auditoría o reporte— está pensado para dos lectores a la vez: el especialista que revisa el detalle técnico y el responsable de RH o finanzas que necesita entender el riesgo y la siguiente acción.</p>
     <p class="nos-p">Apoyamos ese trabajo con herramientas propias de automatización que reducen tiempos sin sacrificar precisión.</p>
+    <img class="nos-foto" src="img/fotos/inicio-trabajo.jpg" alt="Reunión de trabajo revisando reportes con el cliente" loading="lazy">
   </div>
   <div class="nos-right">
     <div class="valor-item">

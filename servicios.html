@@ -63,9 +63,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:72px;d
 .servicios-group{padding:40px 60px 40px}
 .group-intro{font-size:14px;line-height:1.8;color:var(--ink-secondary);max-width:60ch;margin-bottom:8px}
 .servicios-group .sec-h2{margin-bottom:24px}
-.servicio-card{display:grid;grid-template-columns:240px 1fr;gap:44px;align-items:start;padding:44px 0;border-top:1px solid var(--border-strong);scroll-margin-top:100px}
+.servicio-card{display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:start;padding:48px 0;border-top:1px solid var(--border-strong);scroll-margin-top:100px}
 .servicios-group:last-of-type .servicio-card:last-child{border-bottom:1px solid var(--border-strong)}
-.s-img{display:block;width:240px;height:auto;aspect-ratio:3/2;border:1px solid var(--border)}
+.s-img{display:block;width:320px;height:auto;aspect-ratio:3/2;object-fit:cover;filter:saturate(0.82) contrast(1.03)}
 .s-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
 .s-num{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;color:var(--border-strong)}
 .s-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--navy)}
@@ -110,7 +110,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   .page-header h1{font-size:36px}
   .servicios-group,.closing{padding-left:24px;padding-right:24px}
   .servicio-card{grid-template-columns:1fr;gap:20px;padding:32px 0}
-  .s-img{width:100%;max-width:360px}
+  .s-img{width:100%;max-width:480px}
   .s-name{font-size:24px}
   .s-cols{grid-template-columns:1fr;gap:20px}
   .closing-box{flex-direction:column;align-items:flex-start}
@@ -166,7 +166,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   <h2 class="sec-h2">Auditoría y dictaminación ante el IMSS, INFONAVIT y la STPS</h2>
 
   <article class="servicio-card" id="dictamenes">
-    <img class="s-img" src="img/servicios/dictamenes.svg" alt="Dictamen con sello de validación" loading="lazy">
+    <img class="s-img" src="img/fotos/dictamenes.jpg" alt="Dictamen con sello de validación" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">01</span><h3 class="s-name">Dictámenes patronales</h3><span class="s-tag">IMSS · INFONAVIT</span></div>
       <p class="s-need">Tienes la certeza de que tus cuotas están bien pagadas, antes de que la autoridad lo revise.</p>
@@ -183,7 +183,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="isn">
-    <img class="s-img" src="img/servicios/isn.svg" alt="32 entidades federativas bajo un mismo control" loading="lazy">
+    <img class="s-img" src="img/fotos/isn.jpg" alt="32 entidades federativas bajo un mismo control" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">02</span><h3 class="s-name">Cumplimiento del ISN multi-estado</h3><span class="s-tag">ISN</span></div>
       <p class="s-need">Si tienes personal en varios estados, cada uno tiene su propia tasa, sus plazos y sus reglas.</p>
@@ -200,7 +200,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="repse">
-    <img class="s-img" src="img/servicios/repse.svg" alt="Contrato entre dos empresas con registro REPSE" loading="lazy">
+    <img class="s-img" src="img/fotos/repse.jpg" alt="Contrato entre dos empresas con registro REPSE" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">03</span><h3 class="s-name">Auditorías y cumplimiento REPSE</h3><span class="s-tag">REPSE</span></div>
       <p class="s-need">Una subcontratación mal documentada puede costarte la deducción del gasto, el IVA acreditable y la responsabilidad solidaria.</p>
@@ -217,7 +217,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="reingenieria">
-    <img class="s-img" src="img/servicios/reingenieria.svg" alt="Costo de nómina optimizado" loading="lazy">
+    <img class="s-img" src="img/fotos/reingenieria.jpg" alt="Costo de nómina optimizado" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">04</span><h3 class="s-name">Reingeniería de nómina y beneficios</h3><span class="s-tag">Nómina</span></div>
       <p class="s-need">Cuando la nómina pesa demasiado, o las prestaciones no se integran como deberían, pagas de más o te expones.</p>
@@ -234,7 +234,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="preventiva">
-    <img class="s-img" src="img/servicios/preventiva.svg" alt="Revisión preventiva antes de la autoridad" loading="lazy">
+    <img class="s-img" src="img/fotos/preventiva.jpg" alt="Revisión preventiva antes de la autoridad" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">05</span><h3 class="s-name">Revisión preventiva de contribuciones IMSS</h3><span class="s-tag">Preventivo</span></div>
       <p class="s-need">Encontrar un error antes que la autoridad cuesta mucho menos que corregirlo después.</p>
@@ -256,7 +256,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   <h2 class="sec-h2">Para que la operación diaria de tu empresa esté al día</h2>
 
   <article class="servicio-card" id="contabilidad">
-    <img class="s-img" src="img/servicios/contabilidad.svg" alt="Libro contable y calculadora" loading="lazy">
+    <img class="s-img" src="img/fotos/contabilidad.jpg" alt="Libro contable y calculadora" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">06</span><h3 class="s-name">Contabilidad general y fiscal</h3><span class="s-tag">Contabilidad</span></div>
       <p class="s-need">Sin una contabilidad al día no sabes cómo va tu negocio, y el SAT sí lo sabe.</p>
@@ -273,7 +273,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="declaraciones">
-    <img class="s-img" src="img/servicios/declaraciones.svg" alt="Calendario de obligaciones fiscales cumplidas" loading="lazy">
+    <img class="s-img" src="img/fotos/declaraciones.jpg" alt="Calendario de obligaciones fiscales cumplidas" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">07</span><h3 class="s-name">Declaraciones mensuales y anuales</h3><span class="s-tag">Fiscal</span></div>
       <p class="s-need">Un pago tardío o mal calculado genera multas, recargos y una opinión de cumplimiento negativa.</p>
@@ -290,7 +290,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="nomina-rh">
-    <img class="s-img" src="img/servicios/nomina-rh.svg" alt="Equipo de trabajo y recibo de nómina" loading="lazy">
+    <img class="s-img" src="img/fotos/nomina-rh.jpg" alt="Equipo de trabajo y recibo de nómina" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">08</span><h3 class="s-name">Nómina y administración de RH</h3><span class="s-tag">RH</span></div>
       <p class="s-need">Tu equipo espera su pago puntual y correcto; el IMSS y el SAT, también.</p>
@@ -307,7 +307,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="planeacion">
-    <img class="s-img" src="img/servicios/planeacion.svg" alt="Proyección financiera y objetivo" loading="lazy">
+    <img class="s-img" src="img/fotos/planeacion.jpg" alt="Proyección financiera y objetivo" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">09</span><h3 class="s-name">Planeación financiera y fiscal</h3><span class="s-tag">Planeación</span></div>
       <p class="s-need">Las decisiones importantes (invertir, contratar, repartir utilidades) tienen un efecto fiscal que conviene conocer antes.</p>
@@ -324,7 +324,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline
   </article>
 
   <article class="servicio-card" id="auditorias-internas">
-    <img class="s-img" src="img/servicios/auditorias-internas.svg" alt="Revisión de procesos y controles" loading="lazy">
+    <img class="s-img" src="img/fotos/auditorias-internas.jpg" alt="Revisión de procesos y controles" loading="lazy">
     <div>
       <div class="s-head"><span class="s-num">10</span><h3 class="s-name">Auditorías internas y de procesos</h3><span class="s-tag">Auditoría</span></div>
       <p class="s-need">Los errores que se repiten y las fugas de dinero casi siempre vienen de un proceso sin control.</p>
